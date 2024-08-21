@@ -25,22 +25,22 @@ window.onload = function() {
 
   let randomValor = Math.floor(Math.random() * valoresCarta.length);
   console.log(valoresCarta[randomValor]);
-  //function numeroRandomCarta(valoresCarta) {
-  //console.log(Math.cell(Math.random() * 13));
-  // }
 
   // Seleccionar aleatoriamente entre cutro pintas : corazones treboles, picas, diamantes
-  let simbolos = ["♦", "♥", "♠", "♣"];
-  let randomSimbolo = Math.floor(Math.random() * simbolos.length);
+  let simbolos = [
+    { simbolo: "♦", color: "red" },
+    { simbolo: "♥", color: "red" },
+    { simbolo: "♠", color: "black" },
+    { simbolo: "♣", color: "black" }
+  ];
+  let randomSimbolo = simbolos[Math.floor(Math.random() * simbolos.length)];
   console.log(simbolos[randomSimbolo]);
 
   // Mostrar en HTML el numero
   document.querySelector("#cardNumber").innerHTML = valoresCarta[randomValor];
   // Mostrar la pinta
-  document.querySelector("#simbolo").innerHTML = simbolos[randomSimbolo];
-  document.querySelector("#simbolo2").innerHTML = simbolos[randomSimbolo];
-
-  // Cuando sean corazones y diamantes que sea rojo y treboles y picas negro
-
-  // Hacer los cambios graficos
+  document.querySelectorAll(".simbolo").forEach((elem, index) => {
+    elem.innerHTML = randomSimbolo.simbolo;
+    elem.style.color = randomSimbolo.color;
+  });
 };

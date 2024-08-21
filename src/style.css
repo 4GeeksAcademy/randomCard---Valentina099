@@ -1,3 +1,33 @@
-.mainCard {
+body {
+  background-color: green;
+}
+
+.card {
+  text-align: center;
+  padding-top: 400px;
   margin: auto;
+  height: 400px;
+  position: relative;
+
+  .simbolo1 {
+    position: absolute;
+    top: -22px;
+    left: -97px;
+    font-size: 90px;
+  }
+
+  .simbolo2 {
+    position: absolute;
+    bottom: 1px;
+    right: -97px;
+    font-size: 90px;
+  }
+
+  .card-body {
+    padding-top: 80px;
+  }
+
+  #cardNumber {
+    font-size: 100px;
+  }
 }
